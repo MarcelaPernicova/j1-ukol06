@@ -72,7 +72,7 @@ public class Aplikace extends JFrame {
 
         vypocitatButton.addActionListener(this::handleVypocitat);
 
-
+n
         pack();
     }
 
