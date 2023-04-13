@@ -8,6 +8,24 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Aplikace extends JFrame {
+    private JTextField husyField;
+    private JLabel husyLabel;
+
+    private JTextField kraliciField;
+
+    private JLabel kraliciLabel;
+
+    private Button vypocitatButton;
+
+    private JTextField hlavyField;
+
+    private JLabel hlavyLabel;
+
+    private JTextField nohyField;
+
+    private JLabel nohyLabel;
+
+
 
     public static void main(String[] args) {
         FlatLightLaf.setup();
@@ -32,7 +50,36 @@ public class Aplikace extends JFrame {
 
         //TODO implementovat formulář podle zadání
 
+
+        husyField = new JTextField();
+        husyLabel = new JLabel("Husy");
+        husyLabel.setDisplayedMnemonic('H');
+        husyLabel.setLabelFor(husyField);
+        add(husyField);
+        add(husyLabel);
+        add(husyField, "left, span");
+
+        kraliciField = new JTextField();
+        kraliciLabel = new JLabel("Králíci");
+        kraliciLabel.setDisplayedMnemonic('K');
+        kraliciLabel.setLabelFor(kraliciField);
+
+        add(kraliciField);
+        add(kraliciLabel);
+        add(kraliciField,"left, span");
+
+        getRootPane().setDefaultButton(vypocitatButton);
+
+        vypocitatButton.addActionListener(this::handleVypocitat);
+
+
         pack();
     }
 
+    private JPanel createButtonBar () {
+        vypocitatButton = new JButton("Vypočítat");
+        vypocitatButton.setMnemotic('V');
+
+
+    }
 }
